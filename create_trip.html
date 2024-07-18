@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div id="menu-container"></div>
+    <div class="trip-form">
+        <h1>Create a New Trip</h1>
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="dates">Dates:</label>
+            <input type="text" id="dates" name="dates" placeholder="e.g., June 15 - June 20" required>
+
+            <label for="budget">Budget:</label>
+            <input type="number" id="budget" name="budget" min="0" required>
+
+            <button type="submit">Create Trip</button>
+        </form>
+        <div class="container">
+            <button type="button" onclick="window.location.href='itinerary.html'">Itinerary</button>
+            <button type="button" onclick="window.location.href='collaborative_trip.html'">Collaborative Planning</button>
+            <button type="button" onclick="window.location.href='budget_management.html'">Budget Management</button>
+        </div>
+        <button class="logoutbtn" id="logoutbtn">Logout</button>
+    </div>
+    <script>
+        // Add logout functionality
+        const logoutbtn = document.getElementById('logoutbtn');
+        logoutbtn.addEventListener('click', () => {
+            // Perform logout logic here
+            // For example, clear session data and redirect to the login page
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

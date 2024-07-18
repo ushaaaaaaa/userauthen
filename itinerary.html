@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trip Itinerary</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="itinerary">
+        <h1>My Trip Itinerary</h1>
+        <div class="day">
+            <h2>Day 1 - Arrival and Central Paris</h2>
+            <ul>
+                <li>Morning: Arrive, check-in, breakfast at a local café.</li>
+                <li>Late Morning: Visit the Louvre Museum</li>
+                <li>Afternoon: Lunch near Louvre, stroll through Tuileries Garden, visit Place de la Concorde</li>
+                <li>Evening: Walk along Champs-Élysées, visit Arc de Triomphe, dinner on Champs-Élysées.</li>
+            </ul>
+            <h2>Day 2 - Iconic Landmarks</h2>
+            <ul>
+                <li>Morning: Breakfast, visit Eiffel Tower.</li>
+                <li>Late Morning: Seine River Cruise.</li>
+                <li>Afternoon: Lunch, visit Notre Dame Cathedral.</li>
+                <li>Evening: Explore Latin Quarter, dinner in Latin Quarter</li>
+            </ul>
+            <h2>Day 3 - Art and Culture</h2>
+            <ul>
+                <li>Morning: Breakfast, visit Musée d’Orsay.</li>
+                <li>Late Morning:Head to Montmartre, visit Sacré-Cœur Basilica..</li>
+                <li>Afternoon: Lunch in Montmartre, explore artistic streets..</li>
+                <li>Evening: Optional Moulin Rouge show, dinner in Montmartre.</li>
+            </ul>
+        </div>
+        <!-- Repeat similar sections for other days -->
+        <div class="container">
+            <button onclick="location.href='create_trip.html'" type="button">Create a New Trip</button>
+            <button onclick="location.href='collaborative_trip.html'" type="button">Collaborative Trip Planning</button>
+        </div>
+        <button class="logoutbtn" id="logoutbtn">Logout</button>
+    </div>
+    <script>
+        // Add logout functionality
+        const logoutbtn = document.getElementById('logoutbtn');
+        logoutbtn.addEventListener('click', () => {
+            // Perform logout logic here
+            // For example, clear session data and redirect to the login page
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

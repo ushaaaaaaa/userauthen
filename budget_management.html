@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Management</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Trip Budget Management</h1>
+        <div class="trip-details">
+            <h2>Trip to Paris</h2>
+            <p>June 15 - June 20, 2024</p>
+            <p>Budget: $2,500</p>
+        </div>
+        <div class="budget-tracker">
+            <h3>Expenses</h3>
+            <ul class="expenses-list">
+                <li>
+                    <span class="expense-item">Hotel
+                    <span class="expense-cost">$800
+                    <span class="expense-split">Split among 4 people
+                </li>
+                <li>
+                    <span class="expense-item">Flights
+                    <span class="expense-cost">$600
+                    <span class="expense-split">Split among 4 people
+                </li>
+                <!-- Add more expenses here -->
+            </ul>
+            <div class="add-expense">
+                <input type="text" placeholder="Add a new expense...">
+                <button>Add</button>
+            </div>
+        </div>
+        <div class="budget-summary">
+            <h3>Budget Summary</h3>
+            <p>Total Expenses: <span id="total-expenses">$1,400</p>
+            <p>Remaining Budget: <span id="remaining-budget">$1,100</p>
+            <p>Cost per Person: <span id="cost-per-person">$350</p>
+        </div>
+        <div class="container">
+            <button onclick="location.href='collaborative_trip.html'" type="button">Collaborative Trip Planning</button>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <script>
+        // Add logout functionality
+        const logoutBtn = document.getElementById('logoutBtn');
+        logoutBtn.addEventListener('click', () => {
+            // Perform logout logic here
+            // For example, clear session data and redirect to the login page
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

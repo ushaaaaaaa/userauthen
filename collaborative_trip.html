@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Trip Planning</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Plan Your Next Adventure</h1>
+        <div class="trip-details">
+            <h2>Trip to Paris</h2>
+            <p>June 15 - June 20, 2024</p>
+            <p>Budget: $2,500</p>
+        </div>
+        <div class="itinerary">
+            <h3>Itinerary</h3>
+            <ul>
+                <li>
+                    <h4>Day 1</h4>
+                    <p>Visit the Eiffel Tower</p>
+                    <div class="comments">
+                        <h5>Comments</h5>
+                        <ul>
+                            <li>
+                                <p>We should go early to avoid crowds.</p>
+                                <span>- John</span>
+                            </li>
+                            <li>
+                                <p>Don't forget to take lots of pictures!</p>
+                                <span>- Jane</span>
+                            </li>
+                        </ul>
+                        <form>
+                            <input type="text" placeholder="Add a comment...">
+                            <button type="submit">Comment</button>
+                        </form>
+                    </div>
+                </li>
+                <!-- Add more days here -->
+            </ul>
+        </div>
+        <div class="container">
+            <button onclick="location.href='itinerary.html'" type="button">My Trip Itinerary</button>
+            <button onclick="location.href='budget_management.html'" type="button">Budget Management</button>
+        </div>
+        <button class="logoutbtn" id="logoutbtn">Logout</button>
+    </div>
+    <script>
+        // Add logout functionality
+        const logoutbtn = document.getElementById('logoutbtn');
+        logoutbtn.addEventListener('click', () => {
+            // Perform logout logic here
+            // For example, clear session data and redirect to the login page
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
