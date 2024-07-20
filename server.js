@@ -83,12 +83,12 @@ app.get('/auth/facebook',
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index_.html'));
 });
 
-// Serve index.html on the root route
+// Serve index_.html on the root route
 app.get('/index', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index_.html'));
 });
 
 // Login route
@@ -156,7 +156,7 @@ app.get('/logout', (req, res) => {
       if (err) {
         return next(err);
       }
-      res.redirect('/index.html');
+      res.redirect('/index_.html');
     });
   });
 });

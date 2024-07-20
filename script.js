@@ -47,7 +47,7 @@ function logout() {
   localStorage.removeItem('token');
 
   // Redirect to login page
-  window.location.href = 'index.html';
+  window.location.href = 'index_.html';
 }
 // Function to fetch data from a protected route
 async function fetchProtectedData() {
