@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cookieParser());
 
-// MongoDB connection URI
+// MongoDB connection URI 
 const mongoURI = 'mongodb+srv://ushasri:Ushadhanya@cluster0.9qbypb2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 // Connect to MongoDB
