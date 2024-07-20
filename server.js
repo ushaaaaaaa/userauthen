@@ -83,9 +83,7 @@ app.get('/auth/facebook',
 app.use(express.static(__dirname));
 
 //default route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index_.html'));
-});
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 // Serve index_.html on the root route
 app.get('/index', (req, res) => {
