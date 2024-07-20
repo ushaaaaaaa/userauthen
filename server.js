@@ -82,6 +82,10 @@ app.get('/auth/facebook',
 // Serve static files from the "public" directory
 app.use(express.static(__dirname));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Serve index.html on the root route
 app.get('/index', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
