@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config(); // Load environment variables from .env file
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
@@ -29,6 +30,18 @@ function(accessToken, refreshToken, profile, done) {
   return done(null, profile);
 }));
 
+passport.use(new FacebookStrategy({
+  clientID: '506871881782530',
+  clientSecret: 'dda8c84c4ef2ae3280ad99e87a1cd5df',
+  callbackURL: 'http://localhost:3000/auth/facebook/callback',
+},
+function(accessToken, refreshToken, profile, done) {
+  // Here, you can create or find the user in your database
+  // and associate the Google profile with the user
+  // For simplicity, we'll just return the profile
+  return done(null, profile);
+}
+));
 // Configure session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET || '414e640554f7d9e44871073b34b331958a911f99ecf4fe366c6189518c0197d2675c6f6598fdd3f41994e519df9ddd47fcda87e22e1c278a6a8dec78b551e83e',
@@ -56,6 +69,15 @@ app.get('/auth/google/callback',
   function(req, res) {
     res.redirect('/create_trip.html');
   });
+
+app.get('/auth/facebook',
+    passport.authenticate('facebook'));
+  
+  app.get('/auth/facebook/callback',
+    passport.authenticate('facebook', { failureRedirect: '/' }),
+    function(req, res) {
+      res.redirect('/create_trip.html');
+    });
 
 // Serve static files from the "public" directory
 app.use(express.static(__dirname));
